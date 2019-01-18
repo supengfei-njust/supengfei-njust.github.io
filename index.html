@@ -312,7 +312,7 @@
 <li>在本地使用如下命令新建一个博客源文件并将其与github远程仓库username.github.io相绑定；</li>
 </ol>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init &lt;folder&gt;    //初始化，folder为博客文件目录</span><br><span class="line">$ <span class="built_in">cd</span> &lt;folder&gt;</span><br><span class="line">$ npm install</span><br></pre></td></tr></table></figure>
-<p>修改博客源文件中_config.yml中的deploy配置选项：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy：</span><br><span class="line">	type：git           //采用git进行控制</span><br><span class="line">	repo：https://github.com/username/username.github.io.git //修改为自己建立的远程仓库</span><br><span class="line">	branch：master      //分支为master</span><br></pre></td></tr></table></figure></p>
+<p>修改博客源文件中_config.yml中的deploy配置选项：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy：</span><br><span class="line">  type：git           //采用git进行控制</span><br><span class="line">  repo：https://github.com/username/username.github.io.git //修改为自己建立的远程仓库</span><br><span class="line">  branch：master      //分支为master</span><br></pre></td></tr></table></figure></p>
 <ol start="4">
 <li>生成静态博客文件并部署到远程仓库；</li>
 </ol>
