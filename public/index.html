@@ -303,10 +303,29 @@
             <h2 id="方案选择"><a href="#方案选择" class="headerlink" title="方案选择"></a>方案选择</h2><p>使用hexo发布博客到github比较简单，但要将博客源码文件也上传到github用于同步，方便在其他电脑上也能进行博客的编辑，则有如下两种方案可以选择：</p>
 <ul>
 <li>采用两个repo，一个存放hexo生成的静态博客文件，另一个存放博客源文件</li>
-<li>采用一个repo，建立两个分支一个master分支存放hexo生成的静态博客文件，另一个分支（自己命名）hexo分支存放博客源文件</li>
+<li>采用一个repo，建立两个分支，一个master分支存放hexo生成的静态博客文件，另一个hexo（自己命名）分支存放博客源文件</li>
 </ul>
 <p>第二种方案更加简洁干净，最终选择采用第二种方案</p>
-<h2 id="具体步骤"><a href="#具体步骤" class="headerlink" title="具体步骤"></a>具体步骤</h2>
+<h2 id="具体步骤"><a href="#具体步骤" class="headerlink" title="具体步骤"></a>具体步骤</h2><ol>
+<li>在github中新建一个repo，repo名称为username.github.io，此处username为用户名，并使用README初始化;</li>
+<li>新建一个hexo分支，并将hexo分支设置为默认分支；</li>
+<li>在本地使用如下命令新建一个博客源文件并将其与github远程仓库username.github.io相绑定；</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init &lt;folder&gt;    //初始化，folder为博客文件目录</span><br><span class="line">$ <span class="built_in">cd</span> &lt;folder&gt;</span><br><span class="line">$ npm install</span><br></pre></td></tr></table></figure>
+<p>修改博客源文件中_config.yml中的deploy配置选项：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy：</span><br><span class="line">  type：git           //采用git进行控制</span><br><span class="line">  repo：https://github.com/username/username.github.io.git //修改为自己建立的远程仓库</span><br><span class="line">  branch：master      //分支为master</span><br></pre></td></tr></table></figure></p>
+<ol start="4">
+<li>生成静态博客文件并部署到远程仓库；</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>此时静态网页文件便已上传到github仓库的master分支中，同时博客被部署在github pages上，hexo分支中只有一个README文件。</p>
+<ol start="5">
+<li>使用git clone将远程仓库的hexo分支克隆到本地；</li>
+<li>将博客源文件拷贝到克隆下来的分支文件中；</li>
+<li>在本地分支文件中使用如下命令将博客源文件上传到远程仓库的hexo分支中；</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git add .               //将所有的博客文件加入git跟踪</span><br><span class="line">$ git commit -m <span class="string">"init"</span>    //提交到本地仓库</span><br><span class="line">$ git push origin hexo    //提交到远程仓库</span><br></pre></td></tr></table></figure>
+<h2 id="hexo常用命令"><a href="#hexo常用命令" class="headerlink" title="hexo常用命令"></a>hexo常用命令</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new [layout] &lt;title&gt;  //创建新文章</span><br><span class="line">$ hexo clean                 //清除缓存文件和已生成的静态文件</span><br><span class="line">$ hexo server                //启动本地服务器，默认为：http://localhost:4000/</span><br></pre></td></tr></table></figure>
+
           
         
       
@@ -523,6 +542,15 @@
 
             
 
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">tags</span>
+                
+              </div>
             
 
           </nav>
