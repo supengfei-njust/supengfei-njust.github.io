@@ -1,7 +1,10 @@
 ---
 title: 使用hexo搭建个人博客
 date: 2019-01-18 11:02:58
-tags: hexo
+tags: 
+- hexo
+categories: 
+- hexo
 ---
 ## 方案选择
 使用hexo发布博客到github比较简单，但要将博客源码文件也上传到github用于同步，方便在其他电脑上也能进行博客的编辑，则有如下两种方案可以选择：

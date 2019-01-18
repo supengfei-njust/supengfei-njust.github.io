@@ -8,7 +8,7 @@ subtitle:
 description:
 keywords:
 author: Su Pengfei
-language: en
+language: zh-Hans
 timezone:
 
 # URL
@@ -54,8 +54,17 @@ index_generator:
   order_by: -date
   
 # Category & Tag
-default_category: uncategorized
+#default_category: uncategorized
+#category_map:
+#tag_map:
+
+default_category: Others
 category_map:
+  Programming
+  Bodybuilding
+  Life-Talk
+  Reproduced from others
+  Others
 tag_map:
 
 # Date / Time format
