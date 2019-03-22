@@ -332,7 +332,29 @@
       
         
           
-            <h2 id="1-在终端中使用apt-get安装的软件"><a href="#1-在终端中使用apt-get安装的软件" class="headerlink" title="1.在终端中使用apt-get安装的软件"></a>1.在终端中使用apt-get安装的软件</h2><p>安装软件：sudo apt-get install softname<br>卸载软件：sudo apt-get remove softname<br>卸载并清除配置：sudo apt-get –purge softname<br>更新软件信息数据库：sudo apt-get update<br>进行系统升级：sudo apt-get upgrade</p>
+            <h2 id="1-在终端中使用apt-get安装的软件"><a href="#1-在终端中使用apt-get安装的软件" class="headerlink" title="1. 在终端中使用apt-get安装的软件"></a>1. 在终端中使用apt-get安装的软件</h2><ul>
+<li>安装软件：sudo apt-get install softname</li>
+<li>卸载软件：sudo apt-get remove softname</li>
+<li>卸载并清除配置：sudo apt-get –purge softname</li>
+<li>更新软件信息数据库：sudo apt-get update</li>
+<li>进行系统升级：sudo apt-get upgrade, sudo apt-get disupgrade</li>
+<li>搜索软件包：sudo apt-cache search softname</li>
+</ul>
+<h2 id="2-安装deb包使用的方法"><a href="#2-安装deb包使用的方法" class="headerlink" title="2. 安装deb包使用的方法"></a>2. 安装deb包使用的方法</h2><ul>
+<li>安装deb软件包：dpkg -i xxx.deb</li>
+<li>删除软件包：dpkg -r xxx.deb</li>
+<li>删除软件并清除配置：dpkg -r –purge xxx.deb</li>
+<li>查看软件包信息：dpkg -info xxx.deb</li>
+<li>查看文件拷贝详情：dpkg -L xxx.deb</li>
+<li>查看系统中已安装软件包信息：dpkg -I</li>
+<li>重新配置软件包：dpkg -reconfigure xxx.deb</li>
+</ul>
+<h2 id="3-卸载源代码编译的软件"><a href="#3-卸载源代码编译的软件" class="headerlink" title="3. 卸载源代码编译的软件"></a>3. 卸载源代码编译的软件</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> &lt;source_folder&gt;    </span><br><span class="line">$ make clean</span><br><span class="line">$ ./configure</span><br><span class="line">$ make uninstall</span><br><span class="line">$ rm -rf &lt;source_folder&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="4-清理系统"><a href="#4-清理系统" class="headerlink" title="4. 清理系统"></a>4. 清理系统</h2><ul>
+<li>sudo apt-get autoclean</li>
+<li>sudo apt-get clean</li>
+<li>sudo apt-get autoremove</li>
+</ul>
 
           
         
